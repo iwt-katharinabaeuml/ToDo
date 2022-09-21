@@ -27,34 +27,35 @@ list.addEventListener(
     "click",
     function (ev) {
         if (ev.target.tagName === "LI") {
-            ev.target.classList.toggle("checked");
+            ev.target.classList.toggle('checked');
         }
-    },
-    false
-);
+    false})
+
+
 
 function newElement() {
-    var li = document.createElement("li"); // neues Element in der Liste erzeugen heißt jetzt var li 
+    var li = document.createElement("li"); // neues Element in der Liste erzeugen heißt jetzt var li
     var inputValue = document.getElementById("Eingabefeld").value; // Eingegebenes im Eingabefeld heißt jtzt inputValue
+    console.log(inputValue);
     var t = document.createTextNode(inputValue); // Eingegbenes im Textfeld wird neuer Text
     li.appendChild(t); // neuer Text(eingegeben im Einhabefeld) wird in vorhandene Liste aufgenommen
-    if (inputValue === "") {
+    if (inputValue === " ") {
         alert("no input"); // falls nicht eingegeben wurde, erscheint Pop-Up mit text "no input"
     } else {
-        document.getElementById("myUL").aprrendChild(li); // wurde etwas eingegeben, bekommt die Liste "myUL" ein neues <li> mit dem Inhalt des Eingabefeldes
+        document.getElementById("myUl").appendChild(li); // wurde etwas eingegeben, bekommt die Liste "myUL" ein neues <li> mit dem Inhalt des Eingabefeldes
     }
     document.getElementById("Eingabefeld").value = ""; // Das Eingabefeld wird wieder leer gemacht für neue Eingabe
 
-    var span = document.createElement("SPAN");
-    var txt = document.createTextNode("\u00D7");
-    span.className = "close";
-    span.appendChild(txt);
-    li.appendChild(span);
+    var span = document.createElement("SPAN"); // neuer Span mit dem Namen span
+    var txt = document.createTextNode("\u00D7"); // neuer Text, mit dem Namen txt
+    span.className = "close"; // der Span bekommt Class "close"
+    span.appendChild(txt); // span bekommt einen Inhalt, den Text   WIE KANN ICH MIR DAS VORSTELLN?!
+    li.appendChild(span); // das li bekommt den neuen Inhalt span <li><span class = "close"></span></li>?
 
-    for (i = 0; i < close.length; i++) {
-        close[i].onclick = function () {
-            var div = this.parentElement;
-            div.style.display = "none";
+    for (i = 0; i < close.length; i++) { //geht alle Elemente von  span "close" durch
+        close[i].onclick = function () { // wird 
+            var div = this.parentElement; // auch .parnetNode verwendbar
+            div.style.display = "none"; // hide the div, also das parentElement
         };
     }
 }
