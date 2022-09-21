@@ -20,6 +20,11 @@
             color: aliceblue;
             font-size: 18px;
             transition: 0.2s;
+
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         .header {
@@ -48,7 +53,7 @@
         ul li:checked::before {
             content: "";
             position: absolute;
-            border-color: #fff;
+            border-color: black;
             border-style: solid;
             border-width: 0 2px 2px 0;
             top: 10px;
@@ -102,5 +107,3 @@
 </body>
 
 </html>
-
-adjs
