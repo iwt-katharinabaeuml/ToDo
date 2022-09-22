@@ -39,7 +39,7 @@ function newElement() {
     console.log(inputValue);
     var t = document.createTextNode(inputValue); // Eingegbenes im Textfeld wird neuer Text
     li.appendChild(t); // neuer Text(eingegeben im Einhabefeld) wird in vorhandene Liste aufgenommen
-    if (inputValue === " ") {
+    if (inputValue === '') {
         alert("no input"); // falls nicht eingegeben wurde, erscheint Pop-Up mit text "no input"
     } else {
         document.getElementById("myUl").appendChild(li); // wurde etwas eingegeben, bekommt die Liste "myUL" ein neues <li> mit dem Inhalt des Eingabefeldes
