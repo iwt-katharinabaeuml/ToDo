@@ -1,4 +1,4 @@
-const fs = require('fs'); // imports Package to use functions other ppl wrote
+// const fs = require('fs'); // imports Package to use functions other ppl wrote
 
 // Create a "close" button and append it to each list item
 var myNodelist = document.getElementsByTagName("LI"); // macht alle <LI> zu einer Collection; Groß und Kleinschreibung scheinbar irrelevant
@@ -61,3 +61,9 @@ function newElement() {
         };
     }
 }
+const content = document.getElementById("myUl").innerText.toString()
+console.log(content)
+
+
+let eeeee = new fileFunction("test")
+eeeee.writesessionStorage("sonmist");
