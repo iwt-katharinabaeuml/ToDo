@@ -2,10 +2,10 @@
 /**
  * this function is here to write and read to files initial constructor is the {content} which needs to be a string;
  */
- class fileFunction {
+ export class fileFunction {
     constructor(
-      key= "TempSaveStorage",
     ){}
+     key= "TempSaveStorage"
     writesessionStorage(content){
       try{
       sessionStorage.setItem(key,content)

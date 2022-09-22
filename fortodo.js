@@ -24,14 +24,14 @@ for (i = 0; i < close.length; i++) {
 }
 
 // Add a "checked" symbol when clicking on a list item
-var list = document.querySelector("ul");
-list.addEventListener(
-    "click",
-    function (ev) {
-        if (ev.target.tagName === "LI") {
-            ev.target.classList.toggle('checked');
-        }
-    false})
+// var list = document.querySelector("ul");
+// list.addEventListener(
+//     "click",
+//     function (ev) {
+//         if (ev.target.tagName === "LI") {
+//             ev.target.classList.toggle('checked');
+//         }
+//     false})
 
 
 
@@ -61,9 +61,9 @@ function newElement() {
         };
     }
 }
-const content = document.getElementById("myUl").innerText.toString()
-console.log(content)
+// const content = document.getElementById("myUl").innerText.toString()
+// console.log(content)
 
 
-let eeeee = new fileFunction("test")
-eeeee.writesessionStorage("sonmist");
+sessionStorage.setItem("TempSaveStorage","wow")
+console.log(sessionStorage.getItem("TempSaveStorage"))
