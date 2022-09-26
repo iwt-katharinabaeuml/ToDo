@@ -13,17 +13,20 @@ for (i = 0; i < myNodelist.length; i++) { //einmal durch myNodelist
     myNodelist[i].appendChild(span);
 }
 
-// Click on a close button to hide the current list item
+//Click on a close button to hide the current list item
 var close = document.getElementsByClassName("close");
 var i;
 for (i = 0; i < close.length; i++) {
     close[i].onclick = function () {
         var div = this.parentElement;
         div.style.display = "none";
-    };
+        sessionStorage.removeItem(div)
+    };console.log(div)
 }
 
-// Add a "checked" symbol when clicking on a list item
+
+
+//Add a "checked" symbol when clicking on a list item
 // var list = document.querySelector("ul");
 // list.addEventListener(
 //     "click",
@@ -48,22 +51,23 @@ function newElement() {
     }
     document.getElementById("Eingabefeld").value = ""; // Das Eingabefeld wird wieder leer gemacht für neue Eingabe
 
+sessionStorage.setItem(inputValue,"something else" )
+
     var span = document.createElement("SPAN"); // neuer Span mit dem Namen span
     var txt = document.createTextNode("\u00D7"); // neuer Text, mit dem Namen txt
     span.className = "close"; // der Span bekommt Class "close"
-    span.appendChild(txt); // span bekommt einen Inhalt, den Text   WIE KANN ICH MIR DAS VORSTELLN?!
+    span.appendChild(txt); // span bekommt einen Inhalt, den Text   WIE KANN ICH MIR DAS VORSTELLEN?!
     li.appendChild(span); // das li bekommt den neuen Inhalt span <li><span class = "close"></span></li>?
 
     for (i = 0; i < close.length; i++) { //geht alle Elemente von  span "close" durch
         close[i].onclick = function () { // wird 
-            var div = this.parentElement; // auch .parnetNode verwendbar
+            var div = this.parentNode; // auch .parentNode verwendbar
             div.style.display = "none"; // hide the div, also das parentElement
         };
     }
 }
-// const content = document.getElementById("myUl").innerText.toString()
-// console.log(content)
 
 
-sessionStorage.setItem("TempSaveStorage","wow")
-console.log(sessionStorage.getItem("TempSaveStorage"))
+
+// sessionStorage.setItem("TempSaveStorage","wow")
+// console.log(sessionStorage.getItem("TempSaveStorage"))
