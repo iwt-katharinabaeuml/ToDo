@@ -41,9 +41,9 @@ for (i = 0; i < close.length; i++) {
 function newElement() {
     var li = document.createElement("li"); // neues Element in der Liste erzeugen heißt jetzt var li
     var inputValue = document.getElementById("Eingabefeld").value; // Eingegebenes im Eingabefeld heißt jtzt inputValue
-    // let incr = incr++;
-    // console.log(incr)
-    // console.log(inputValue);
+    let incr = incr++;
+    console.log(incr)
+    console.log(inputValue);
 
     var t = document.createTextNode(inputValue); // Eingegbenes im Textfeld wird neuer Text
     li.appendChild(t); // neuer Text(eingegeben im Einhabefeld) wird in vorhandene Liste aufgenommen
@@ -62,23 +62,26 @@ sessionStorage.setItem(inputValue,"something else" )
     span.className = "close"; // der Span bekommt Class "close"
     span.appendChild(txt); // span bekommt einen Inhalt, den Text   WIE KANN ICH MIR DAS VORSTELLEN?!
     li.appendChild(span); // das li bekommt den neuen Inhalt span <li><span class = "close"></span></li>?
-console.log(span) //<span class="close">x</span>
-console.log(li)
+
     for (i = 0; i < close.length; i++) { //geht alle Elemente von  span "close" durch
         console.error(i);
-        console.log("test",i)
         close[i].onclick = function () { // wird 
             console.log(i)
+            var div = this.parentNode
             var div = this.parentNode; // auch .parentNode verwendbar
-            div.style.display = "none";
-            console.log("test2",div)
-            let throwawaydiv = div_removechild() // hide the div, also das parentElement
+            div.style.display = "none"; 
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            // hide the div, also das parentElement
            // sessionStorage.removeItem("xc")
         };
     }
 }
-//TODO: add undo delete function
-
-
-// sessionStorage.setItem("TempSaveStorage","wow")
-// console.log(sessionStorage.getItem("TempSaveStorage"))
