@@ -37,25 +37,23 @@ for (i = 0; i < close.length; i++) {
 //     false})
 
 
-
+let counter = 0
 function newElement() {
-    var li = document.createElement("li"); // neues Element in der Liste erzeugen heißt jetzt var li
-    var inputValue = document.getElementById("Eingabefeld").value; // Eingegebenes im Eingabefeld heißt jtzt inputValue
-    // let incr = incr++;
-    // console.log(incr)
-    // console.log(inputValue);
 
+    var li = document.createElement("li") // neues Element in der Liste erzeugen heißt jetzt var li
+    var inputValue = document.getElementById("Eingabefeld").value; // Eingegebenes im Eingabefeld heißt jtzt inputValue
     var t = document.createTextNode(inputValue); // Eingegbenes im Textfeld wird neuer Text
     li.appendChild(t); // neuer Text(eingegeben im Einhabefeld) wird in vorhandene Liste aufgenommen
+
     if (inputValue === '') {
         alert("no input"); // falls nicht eingegeben wurde, erscheint Pop-Up mit text "no input"
     } else {
-        document.getElementById("myUl").appendChild(li)
+        document.getElementById("myUl").appendChild(li).setAttribute("id", counter.toString())
+        sessionStorage.setItem(counter,inputValue) 
+        counter ++
         // wurde etwas eingegeben, bekommt die Liste "myUL" ein neues <li> mit dem Inhalt des Eingabefeldes
     }
     document.getElementById("Eingabefeld").value = ""; // Das Eingabefeld wird wieder leer gemacht für neue Eingabe
-
-sessionStorage.setItem(inputValue,"something else" )
 
     var span = document.createElement("SPAN"); // neuer Span mit dem Namen span
     var txt = document.createTextNode("\u00D7"); // neuer Text, mit dem Namen txt
@@ -66,13 +64,16 @@ console.log(span) //<span class="close">x</span>
 console.log(li)
     for (i = 0; i < close.length; i++) { //geht alle Elemente von  span "close" durch
         console.error(i);
+        console.log("length",close.length)
         console.log("test",i)
         close[i].onclick = function () { // wird 
-            console.log(i)
             var div = this.parentNode; // auch .parentNode verwendbar
+           
+            //
             div.style.display = "none";
-            console.log("test2",div)
-            let throwawaydiv = div_removechild() // hide the div, also das parentElement
+            div.removeItem
+            console.log("testy",div.removeItem)
+            // hide the div, also das parentElement
            // sessionStorage.removeItem("xc")
         };
     }
