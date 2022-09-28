@@ -1,30 +1,32 @@
-// const fs = require('fs'); // imports Package to use functions other ppl wrote
-
 // Create a "close" button and append it to each list item
-var myNodelist = document.getElementsByTagName("LI"); // macht alle <LI> zu einer Collection; Groß und Kleinschreibung scheinbar irrelevant
+let myNodelist = document.getElementsByTagName("LI"); // macht alle <LI> zu einer Collection; Groß und Kleinschreibung scheinbar irrelevant
 console.log(myNodelist)
-var i; // Laufindex
+let i; // Laufindex
 for (i = 0; i < myNodelist.length; i++) { //einmal durch myNodelist
-    var span = document.createElement("SPAN");
+    let span = document.createElement("SPAN");
     console.log(span)
-    var txt = document.createTextNode("\u00D7");
+    let txt = document.createTextNode("\u00D7");
     span.className = "close";
     span.appendChild(txt);
     myNodelist[i].appendChild(span);
 }
 
 //Click on a close button to hide the current list item
-var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++) {
+let close = document.getElementsByClassName("close");
+
+for (let i = 0; i < close.length; i++) {
     close[i].onclick = function () {
-        var  div = this.parentElement;
+        let div = this.parentElement;
         div.style.display = "none";
         sessionStorage.removeItem(div)
-    };console.log(div)
+    };
 }
-
-
+document.getElementById("eingabe").addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("button").click();
+    }
+});
 
 //Add a "checked" symbol when clicking on a list item
 // var list = document.querySelector("ul");
@@ -37,46 +39,50 @@ for (i = 0; i < close.length; i++) {
 //     false})
 
 
+let counter = 0;
 
 function newElement() {
-    var li = document.createElement("li"); // neues Element in der Liste erzeugen heißt jetzt var li
-    var inputValue = document.getElementById("Eingabefeld").value; // Eingegebenes im Eingabefeld heißt jtzt inputValue
+    let li = document.createElement("li"); // neues Element in der Liste erzeugen heißt jetzt var li
+    let inputValue = document.getElementById("eingabe").value; // Eingegebenes im Eingabefeld heißt jtzt inputValue
     // let incr = incr++;
     // console.log(incr)
     // console.log(inputValue);
 
-    var t = document.createTextNode(inputValue); // Eingegbenes im Textfeld wird neuer Text
+    let t = document.createTextNode(inputValue); // Eingegbenes im Textfeld wird neuer Text
     li.appendChild(t); // neuer Text(eingegeben im Einhabefeld) wird in vorhandene Liste aufgenommen
     if (inputValue === '') {
         alert("no input"); // falls nicht eingegeben wurde, erscheint Pop-Up mit text "no input"
     } else {
-        document.getElementById("myUl").appendChild(li)
+        document.getElementById("myUl").appendChild(li).setAttribute("id", counter.toString())
+        sessionStorage.setItem(counter.toString(), inputValue)
+        counter++;
         // wurde etwas eingegeben, bekommt die Liste "myUL" ein neues <li> mit dem Inhalt des Eingabefeldes
     }
-    document.getElementById("Eingabefeld").value = ""; // Das Eingabefeld wird wieder leer gemacht für neue Eingabe
+    document.getElementById("eingabe").value = ""; // Das Eingabefeld wird wieder leer gemacht für neue Eingabe
 
-sessionStorage.setItem(inputValue,"something else" )
 
-    var span = document.createElement("SPAN"); // neuer Span mit dem Namen span
-    var txt = document.createTextNode("\u00D7"); // neuer Text, mit dem Namen txt
+    let span = document.createElement("SPAN"); // neuer Span mit dem Namen span
+    let txt = document.createTextNode("\u00D7"); // neuer Text, mit dem Namen txt
     span.className = "close"; // der Span bekommt Class "close"
     span.appendChild(txt); // span bekommt einen Inhalt, den Text   WIE KANN ICH MIR DAS VORSTELLEN?!
     li.appendChild(span); // das li bekommt den neuen Inhalt span <li><span class = "close"></span></li>?
-console.log(span) //<span class="close">x</span>
-console.log(li)
+    console.log(span) //<span class="close">x</span>
+    console.log(li)
     for (i = 0; i < close.length; i++) { //geht alle Elemente von  span "close" durch
         console.error(i);
-        console.log("test",i)
+        console.log("test", i)
         close[i].onclick = function () { // wird 
             console.log(i)
-            var div = this.parentNode; // auch .parentNode verwendbar
+            let div = this.parentNode; // auch .parentNode verwendbar
             div.style.display = "none";
-            console.log("test2",div)
-            let throwawaydiv = div_removechild() // hide the div, also das parentElement
-           // sessionStorage.removeItem("xc")
+            let currentElement = div.outerHTML.split(/(id="\d+")/gm)[1].split(/(\d+)/gm)[1]
+            console.log("test2", currentElement)
+            sessionStorage.removeItem(currentElement)
+            // sessionStorage.removeItem("xc")
         };
     }
 }
+
 //TODO: add undo delete function
 
 
