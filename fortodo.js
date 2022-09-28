@@ -50,6 +50,7 @@ function newElement() {
 
     let t = document.createTextNode(inputValue); // Eingegbenes im Textfeld wird neuer Text
     li.appendChild(t); // neuer Text(eingegeben im Einhabefeld) wird in vorhandene Liste aufgenommen
+
     if (inputValue === '') {
         alert("no input"); // falls nicht eingegeben wurde, erscheint Pop-Up mit text "no input"
     } else {
