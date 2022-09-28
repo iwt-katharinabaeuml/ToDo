@@ -17,15 +17,25 @@ ul li {
     font-size: 18px;
     transition: 0.2s;
 
-    -webkit-user-select: none;
+    /* -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    user-select: none;
+    user-select: none; */
+}
+
+@media (min-width: 200px) {
+    #button {
+        color: green; !important;
+    }
+    body{
+        background-image: url("https://cataas.com/cat");
+        background-attachment: scroll;
+    }
 }
 
 .header {
     background-color: azure;
-    font-family: Georgia;
+    font-family: Georgia, monospace;
     position: relative;
     padding: 30px 40px;
     text-align: center;

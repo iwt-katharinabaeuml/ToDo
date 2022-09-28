@@ -1,13 +1,24 @@
-const fs = require('fs'); // warum und wofür?
+//const content = 'Some content!';
+/**
+ * this function is here to write and read to files initial constructor is the {content} which needs to be a string;
+//  */
+//  export class fileFunction {
+//     constructor(
+//     ){}
+//      key= "TempSaveStorage"
+//     writesessionStorage(content){
+//       try{
+//       sessionStorage.setItem(key,content)
+//       }
+//       catch(error){
+//         console.error(error);
 
-const content = 'Some content!';
+//       }
+//       };
 
-fs.writeFile('Anderes.txt', content, err => {
-  if (err) {
-    console.error(err);
-  }
-  // file written successfully
-  fs.writeFile
-});
-var Anderertest = fs.readFile('Anderes.txt')
-console.log(Anderertest)
+//     readFile()
+//     {
+//         var Anderertest = sessionStorage.getItem(key)
+//         return Anderertest;
+//     }
+//   }
