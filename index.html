@@ -1,26 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 
 <head>
-    <script  src="fortodo.js"></script>
-    <!-- <script src="writefile.js" type="module"></script>     -->
+    <script defer src="fortodo.js"></script>
     <link rel="stylesheet" href="style.css">
+    <title>ToDoApp</title>
 </head>
 
 <body>
-    <div id="myDIV" class="header">
-        <h1>The To Do List</h1>
-        <input type="text" id="Eingabefeld" placeholder="Title..." />
-        <span onclick="newElement()" class="neuesElement">Add</span>
-    </div>
+<div id="myDIV" class="header">
+    <h1>The To Do List</h1>
+    <label for="eingabe"><input id="eingabe" placeholder="Title..."/>  </label>
+    <button id="button" onclick="newElement()" class="neuesElement">Add</button>
+</div>
 
-    <!-- ungeordnete Liste -->
-    <ul id="myUl">
-        <!-- <li>Deadlift 70x4x8</li>
-        <li class="checked">Benchpress 43x4xmax</li>
-        <li>Row Biceps 40x4x10</li>
-        <li>Hug Machine 35x4x8</li> -->
-    </ul>
+<!-- ungeordnete Liste -->
+<ul id="myUl">
+</ul>
 </body>
-
 </html>
