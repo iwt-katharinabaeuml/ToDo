@@ -1,21 +1,38 @@
 <!DOCTYPE html>
 <html lang="de">
-
-<head>
-    <script defer src="fortodo.js"></script>
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <script defer src="index.js"></script>
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <link rel="stylesheet" href="style.css" />
     <title>ToDoApp</title>
-</head>
+    <ion-icon name="heart"></ion-icon>
+    <div id="myDIV" class="header">
+      <h1>The To Do List</h1>
+      <button id="filter">Filter</button>
+      <label for="eingabe"
+        ><input type="text" id="eingabe" placeholder="Add Item" /><button id="date">Date</button><input type="date" id="start" name="trip-start"
+           value="2022-10-01"
+           min="2022-10-01" max="2025-12-31">
+      </label>
+      <button id="button" onclick="newElement()" class="neuesElement">
+        Add
+      </button>
+      
+      <button id="search">Search</button>
+    </div>
+  </head>
 
-<body>
-<div id="myDIV" class="header">
-    <h1>The To Do List</h1>
-    <label for="eingabe"><input id="eingabe" placeholder="Title..."/>  </label>
-    <button id="button" onclick="newElement()" class="neuesElement">Add</button>
-</div>
+  <body>
 
-<!-- ungeordnete Liste -->
-<ul id="myUl">
-</ul>
-</body>
+   
+
+    
+    
+    <hr />
+
+    <!-- ungeordnete Liste -->
+    <ul id="myUl"></ul>
+    <p id="done">Done:</p>
+    <hr />
+  </body>
 </html>

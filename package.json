@@ -1,0 +1,26 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "This is a ToDo-App",
+  "main": "index.js",
+  "scripts": {
+    "start": "start chrome 127.0.0.1:8080 && http-server -c-1", 
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iwt-katharinabaeuml/ToDo.git"
+  },
+  "keywords": [
+    "todo"
+  ],
+  "author": "Katharina Bäuml",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iwt-katharinabaeuml/ToDo/issues"
+  },
+  "homepage": "https://github.com/iwt-katharinabaeuml/ToDo#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

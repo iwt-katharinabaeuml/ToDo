@@ -1,6 +1,15 @@
 
 * {
     box-sizing: border-box;
+    background-color: rgb(255, 253, 255);
+    font-family: Arial;
+}
+#eingabe {
+    height: 60px;
+    width: 270px;
+    border-radius:5px;
+    color: black;
+    background-color: white;
 }
 
 ul {
@@ -23,18 +32,26 @@ ul li {
     user-select: none; */
 }
 
-@media (min-width: 200px) {
-    #button {
-        color:white; !important;
-    }
-    body{
-        background-image: url("https://cataas.com/cat");
-        background-attachment: scroll;
-    }
+button {
+    background-color: rgb(255, 225, 0);
+    border: 0ch;
+    border-radius:5ch;
+    height: 60px;
+    width: 130px;
 }
 
+@media (min-width: 200px) {
+    #button {
+        color:white !important;
+    }}
+   /* body{
+        background-image: url("https://cataas.com/cat");
+        background-attachment: scroll;
+    } */
+
+
 .header {
-    background-color: azure;
+   
     font-family: Georgia, monospace;
     position: relative;
     padding: 30px 40px;
@@ -46,7 +63,7 @@ ul li:nth-child(odd) {
 }
 
 ul li:hover {
-    background: darkcyan;
+    background: rgb(255, 225, 0) ;
 }
 
 ul li.checked {
@@ -78,7 +95,7 @@ ul li:checked::before {
 }
 
 .close:hover {
-    background-color: #36f4e4;
+    background-color:  rgb(246, 239, 183);
     color: white;
 }
 
@@ -90,5 +107,17 @@ ul li:checked::before {
 }
 
 .neuesElement:hover {
-    background-color: darkcyan;
+    background-color: darkgray;
+}
+hr {
+    color: black;
+    width: 90%;
+    align: center; 
+    height: 4px;
+    background-color: black;
+
+}
+#done {
+    color: black;
+    text-indent: 6%;
 }
